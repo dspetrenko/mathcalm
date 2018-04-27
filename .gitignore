@@ -99,3 +99,12 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# ds: production settings
+*production.py
+
+# ds: SqLite DataBase
+*.sqlite3
+
+# ds: IDE PyCharm
+*.idea*
