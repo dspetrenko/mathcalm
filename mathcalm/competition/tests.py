@@ -1,3 +1,5 @@
+from django.contrib.auth.models import User
+
 from django.test import TestCase
 
 from .models import Competition
@@ -13,6 +15,11 @@ class CompetitionTestCase(TestCase):
         import datetime
 
         competition = Competition()
+
+        # competition.organizer = UserManager.create_user(username='test_user')
+        # us = UserManager().create_user(username='undefined')
+        competition.organizer = User.objects.create_user(username='undefined')
+
         competition.title = 'Math talent competition'
         competition.text = "It's best competition for young brains. " \
                            "Best community. Hard tasks."
@@ -30,6 +37,8 @@ class EventTestCase(TestCase):
         import datetime
 
         competition = Competition()
+        competition.organizer = User.objects.create_user(username='undefined')
+
         competition.title = 'Math talent competition'
         competition.text = "It's best competition for young brains. " \
                            "Best community. Hard tasks."
