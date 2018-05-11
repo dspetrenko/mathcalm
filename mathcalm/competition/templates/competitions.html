@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+    <h1>Competitions</h1>
+
+    {% if competitions %}
+        <table title="Competitions">
+            <tr bgcolor = '808080'>
+                <td>Organizer</td>
+                <td>Title</td>
+                <td>Description</td>
+                <td>Start</td>
+                <td>End</td>
+            </tr>
+        {% for comp in competitions%}
+            <tr>
+                <td> comp.organizer </td>
+                <td> comp.title </td>
+                <td> comp.description </td>
+                <td> comp.start </td>
+                <td> comp.end </td>
+            </tr>
+        {% endfor%}
+        </table>
+    {% else %}
+        <h3>Sorry... No competitions now</h3>
+    {% endbif %}
+
+{% endblock %}
