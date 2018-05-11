@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Calm</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="icon" href="{% static 'img/favicon.ico' %}" />
+</head>
+<header>
+	<table title="page-header">
+        <tr>
+            <td>
+				<img src="/static/img/logo.png">
+			</td>
+            <td>
+				<h1>
+					<a href="/">Math Calm</a>
+				</h1>
+			</td>
+        </tr>
+    </table>
+
+</header>
+<body>
+
+	<div id="login-menu-link" class="block">
+
+		<div class="block_content ">
+			<ul class="menu">
+				{% if user.is_authenticated %}
+					<li class="first leaf"><a href="/logout/" title="">Log out</a></li>
+					<li class="first leaf"><a href="/profile/" title="">Profile</a></li>
+				{% else %}
+					<li class="first leaf"><a href="/login/" title="">Log in</a></li>
+					<li class="first leaf"><a href="/registration/" title="">Sign up</a></li>
+				{% endif %}
+			</ul>
+		</div>
+	</div>
+
+	{% block body %}
+	{% if user.is_authenticated  %}
+        {% block map %}
+		{% endblock %}
+
+		{% block content %}
+		{% endblock %}
+
+	{% endif %}
+	{% endblock %}
+
+</body>
+</html>
