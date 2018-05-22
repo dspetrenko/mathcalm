@@ -12,13 +12,13 @@
                 <td>Start</td>
                 <td>End</td>
             </tr>
-        {% for comp in competitions%}
+        {% for comp in competitions %}
             <tr>
-                <td> comp.organizer </td>
-                <td> comp.title </td>
-                <td> comp.description </td>
-                <td> comp.start </td>
-                <td> comp.end </td>
+                <td> {{comp.organizer}} </td>
+                <td> {{comp.title}} </td>
+                <td> {{comp.description}} </td>
+                <td> {{comp.start}} </td>
+                <td> {{comp.end}} </td>
             </tr>
         {% endfor%}
         </table>
