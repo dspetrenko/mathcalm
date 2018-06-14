@@ -9,7 +9,7 @@ from .models import Competition
 @require_GET
 def main(request):
 
-    return HttpResponse()
+    return render(request, 'main.html')
 
 
 @require_GET
