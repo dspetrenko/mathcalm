@@ -8,5 +8,6 @@ from .views import main
 urlpatterns = [
     path('', main),
     path('login/', auth_views.login, {'extra_context': {'next': '/'}}, name='login'),
+    path('logout/', auth_views.logout, {'next_page': '/'}),
     path('competitions/', competitions),
 ]
